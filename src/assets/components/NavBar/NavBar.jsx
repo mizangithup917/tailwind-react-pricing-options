@@ -33,7 +33,10 @@ const navLinks = [
 
 const NavBar = () => {
   return (
-    <nav>
+
+    <div className=' bg-blue-900'>
+      <nav className='flex justify-between mx-15 items-center'>
+      <h3 className='text-2xl font-bold text-white'>Mizan-Nav</h3>
       <ul className='flex'>
                 {
           navLinks.map(route => <Link key={route.id} route={route}></Link>)
@@ -41,8 +44,12 @@ const NavBar = () => {
 
       </ul>
 
+      <button className='text-white font-bold py-3 px-6 rounded-sm  bg-amber-400'>Sing in</button>
+
    
     </nav>
+    </div>
+    
 
   );
 };
