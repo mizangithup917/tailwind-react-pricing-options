@@ -16,6 +16,7 @@
     "id": 2,
     "name": "Standard Plan",
     "price": "$49/month",
+    "popular": true,
     "description": "Best for regular gym-goers who want 24/7 access, classes, and more flexibility in their fitness routine.",
     "features": [
       "24/7 gym access",
