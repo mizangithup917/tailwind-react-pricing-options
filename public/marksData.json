@@ -1,8 +1,4 @@
-import React from 'react';
-import { LineChart, Line, YAxis, XAxis } from 'recharts';
-
-
-const resultData = [
+[
 {
 "id": "S001",
 "name": "Aisha Rahman",
@@ -84,23 +80,3 @@ const resultData = [
 "english": 86
 }
 ]
-
-
-
-
-const ResultsChart = () => {
-  return (
-       <div className='container mx-auto mt-15 '>
-     
-         <LineChart width={1200} height={500} data={resultData}>
-          <XAxis dataKey="name"></XAxis>
-          <YAxis></YAxis>
-          <Line dataKey={'math'} stroke='red'></Line> 
-          <Line dataKey={'physics'} stroke='green'></Line> 
-          <Line dataKey={'chemistry'} stroke='blue'></Line> 
-        </LineChart>
-       </div>
-  );
-};
-
-export default ResultsChart;
