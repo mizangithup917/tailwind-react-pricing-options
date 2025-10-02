@@ -1,6 +1,7 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import Link from './Link';
+import { Menu, X } from 'lucide-react';
 
 const navLinks = [
   {
@@ -32,25 +33,33 @@ const navLinks = [
 
 
 const NavBar = () => {
+
+  const [open, setOpen] = useState(false);
+
+  const links = navLinks.map(route => <Link key={route.id} route={route}></Link>)
+
   return (
+      <nav className='bg-blue-900 w-full py-3 flex justify-between  items-center'>
+        <span className='flex text-white ml-5 ' onClick={() =>setOpen(!open)}>
+              {
+                open ?
+                <X className='  md:hidden'></X> :
+                <Menu className='md:hidden'></Menu>
+              }
 
-    <div className=' bg-blue-900'>
-      <nav className='flex justify-between mx-15 items-center'>
-      <h3 className='text-2xl font-bold text-white'>Mizan-Nav</h3>
-      <ul className='flex'>
-                {
-          navLinks.map(route => <Link key={route.id} route={route}></Link>)
+              <ul className={`md:hidden absolute duration-1000
+                ${open ? 'top-10' : '-top-40'}`}>
+                {links}
+              </ul>
+              <h3 className='text-2xl font-bold text-white'>Mizan-Nav</h3>                  
+        </span>
+      <ul className='md:flex hidden '> 
+        {
+          links
         }
-
       </ul>
-
-      <button className='text-white font-bold py-3 px-6 rounded-sm  bg-amber-400'>Sing in</button>
-
-   
+      <button className='text-white mr-10 font-bold py-2 px-6 rounded-sm  bg-amber-400'>Sing in</button> 
     </nav>
-    </div>
-    
-
   );
 };
 
